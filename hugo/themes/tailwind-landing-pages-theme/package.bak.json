@@ -1,0 +1,44 @@
+{
+  "name": "amp-theme",
+  "version": "1.0.0",
+  "description": "AMP theme for use on FashionUnited sites",
+  "main": "index.js",
+  "scripts": {
+    "build": "webpack --mode production",
+    "build-tw": "npx tailwindcss -i ./assets/styles/tailwind-main.css -o ./assets/styles/style.css",
+    "start": "webpack --bail --mode production --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Joost van der Laan",
+  "license": "ISC",
+  "browserslist": "last 2 versions",
+  "devDependencies": {
+    "autoprefixer": "9.8.6",
+    "basscss-forms": "^1.0.0",
+    "clean-css": "^5.1.5",
+    "colors.css": "^3.0.0",
+    "css-loader": "^6.2.0",
+    "css-minimizer-webpack-plugin": "^3.0.2",
+    "fibers": "5.0.0",
+    "file-loader": "^3.0.1",
+    "mini-css-extract-plugin": "^2.2.0",
+    "path": "0.12.7",
+    "postcss": "^8.3.6",
+    "postcss-custom-media": "7.0.8",
+    "postcss-custom-properties": "5.0.2",
+    "postcss-import": "12.0.1",
+    "postcss-loader": "3.0.0",
+    "postcss-preset-env": "6.7.0",
+    "sass": "^1.38.0",
+    "sass-loader": "7.3.1",
+    "stylelint": "^13.13.1",
+    "stylelint-webpack-plugin": "^3.0.1",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "dependencies": {
+    "basscss": "^8.1.0",
+    "basscss-basic": "^1.0.0",
+    "basscss-responsive-type-scale": "^1.0.1"
+  }
+}

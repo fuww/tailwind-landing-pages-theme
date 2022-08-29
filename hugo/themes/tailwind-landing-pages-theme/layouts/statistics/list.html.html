@@ -1,0 +1,20 @@
+{{ define "header"}}
+{{- partial "_shared/navigation" . -}}
+{{ end }}
+{{ define "hero" }}
+{{ partial "_tailwind/hero" . }}
+{{ end }}
+{{ define "title" }}<span></span>{{/* Disable the title */}}{{ end }}
+{{ define "main" }}<span></span>{{/* Disable the main */}}{{ end }}
+{{ define "main-blank" }}
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-5xl mx-auto">
+    {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+    {{- partial "_tailwind/card" . -}}
+    {{ end }}
+</div>
+
+<div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
+    {{ .Content }}
+</div>
+
+{{ end }}

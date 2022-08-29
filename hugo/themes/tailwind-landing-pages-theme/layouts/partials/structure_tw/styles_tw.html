@@ -1,0 +1,15 @@
+{{/*Save without formatting: Ctrl + K S  */}}
+
+{{/*  for PWA inclusion, we move this to the body instead of head  */}}
+{{ $twstyles := resources.Get "tw.css" }}
+{{ $twstyles = $twstyles | resources.PostCSS }}
+{{ if  hugo.IsProduction  }}
+    {{ $twstyles = $twstyles | minify | fingerprint | resources.PostProcess }}
+    {{ else if .Site.IsServer }}
+    {{ $twstyles = $twstyles | resources.ExecuteAsTemplate (printf "tailwind.dev.%v.css" now.UnixMilli) .}}
+{{ end }}
+{{/*  <link href="{{ $twstyles.RelPermalink }}" rel="stylesheet" />  */}}
+<style>
+  {{ $twstyles.Content  | safeCSS }}
+</style>
+
