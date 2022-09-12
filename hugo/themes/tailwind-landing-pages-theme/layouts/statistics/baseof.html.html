@@ -11,18 +11,18 @@
     <div class="grid-wrapper">
         {{ block "title" . }}
         <div class="grid-header post">
-            <div class="pt2 pb1 md-pt3 md-pb2">
+            <div class="pt-2 pb-2 md:pt-8 md:pb-4">
                 {{- partial "_tailwind/title" . -}}
             </div>
         </div>
         {{ end }}
         {{ if (not (isset .Params "disablemenu")) }}
-        <div class="grid-nav pt2 pb1 md-pt3 md-pb2 px2">
+        <div class="grid-nav pt2 pb1 md:pt-8 md:pb-4 px-4">
             {{ block "nav" . }}{{ end }}
         </div>
         {{ end }}
         {{ block "main" . }}{{ end }}
-        <div class="grid-sidebar pt2 pb1 md-pt3 md-pb2 px2">
+        <div class="grid-sidebar pt2 pb1 md:pt-8 md:pb-4 px-4">
             {{ block "sidebar" . }}{{ end }}
         </div>
     </div>

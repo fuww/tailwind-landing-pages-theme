@@ -11,7 +11,7 @@
     {{ partial "googleTagManager" . }}
     <meta charset="utf-8"> {{/* Must be first for AMP */}}
     <meta name="viewport" content="width=device-width,initial-scale=1" />
-    <meta name="description" content="{{ .Description }}" />
+    <meta name="description" content="{{.Description}}" />
     <meta name="msapplication-TileImage"
         content="https://media.fashionunited.com/media/favicon/dark/mstile-144x144.png" />
     <meta name="msapplication-config" content="https://media.fashionunited.com/media/favicon/dark/browserconfig.xml" />
@@ -29,6 +29,7 @@
     <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com/" crossorigin="anonymous">
     <link rel="preconnect dns-prefetch" href="https://stats.g.doubleclick.net/" crossorigin="anonymous">
     {{ partial "structure/scripts-amp" . }}
+    {{ partial "structure/styles-amp" . }}
     {{ partial "structure/styles" . }}
     <link rel="icon" href="https://media.fashionunited.com/media/favicon/dark/favicon.ico" />
     <link rel="apple-touch-icon" sizes="60x60"
@@ -65,9 +66,6 @@
 </head>
 
 <body>
-    {{/*  Tailwind CSS will overwrite styles from the amp-theme, must be in body to be picked up by next.js (for now)  */}}
-    {{ partial "structure_tw/styles_tw" . }}
-    
     {{ if isset $.Site.Params "ampmanifest" }}
     {{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
     {{ end }}

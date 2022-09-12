@@ -1,0 +1,36 @@
+<div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
+  <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline">
+    {{ if isset .Params "imagecard"}}
+    {{ partial "_shared/card-image-custom" . }}
+    {{ else if isset .Params "images"}}
+    {{ partial "_shared/card-image" . }}
+    {{ else if isset .Params "logo"}}
+    <div class="">
+      <div class="">
+        <img class="" src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}"
+          alt="{{.Title}}">
+      </div>
+    </div>
+    {{end}}
+    <div class="px-4 py-5 sm:p-6">
+      <!-- Content goes here -->
+      {{/*  <h2 class="font-bold text-xl mb-2">{{.Title}}</h2> */}}
+      {{ if isset .Params "images" }} {{/* Show logo below headerimage */}}
+      {{ if isset .Params "logo" }}
+      <div class="mt-2 mb-4 relative mx-auto" style="width: 124px; height: 60px">
+        <amp-img alt="{{.Title}}" layout="fill" class="contain"
+          src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}">
+        </amp-img>
+      </div>
+      {{ end }}
+      {{ end }}
+      <p class="text-gray-700 text-base">
+        {{ if eq .Section "i" }}
+        {{ if isset .Params "description"}}{{ .Params.Description | truncate 160 }}{{ else }}{{ .Summary | truncate 160 }}{{ end }}
+        {{ else }}
+        {{ if isset .Params "description"}}{{ .Params.Description | truncate 75 }}{{ else }}{{ .Summary | truncate 75 }}{{ end }}
+        {{ end }}
+      </p> {{/* No more then 3 lines  */}}
+    </div>
+  </a>
+</div>

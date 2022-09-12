@@ -1,0 +1,24 @@
+<nav aria-label="Sidebar" class="mt-3">
+    <div class="space-y-1 px-2">
+        {{ $currentPage := . }}
+        {{ range .Site.Menus.developers }}
+        {{ if .HasChildren }}
+            <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+            <a href="{{ .URL }}" class="{{if or ($currentPage.IsMenuCurrent "developers" .) ($currentPage.HasMenuCurrent "developers" .) }}bg-gray-200 text-gray-900{{else}} text-gray-600 hover:bg-gray-50 hover:text-gray-900{{ end }} group flex items-center px-2 py-1 text-base font-medium rounded-md">
+                <span>{{ .Pre }}</span>
+                {{ .Name }}
+            </a>
+            {{ range .Children }}
+                <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+                <a href="{{ .URL }}" class="{{if or ($currentPage.IsMenuCurrent "developers" .) ($currentPage.HasMenuCurrent "developers" .) }}bg-gray-200 text-gray-900{{else}}text-gray-600 hover:bg-gray-50 hover:text-gray-900{{ end }} group flex items-center px-2 py-1 pl-6 text-base font-medium rounded-md">{{ .Name }}</a>
+            {{ end }}
+        {{ else }}
+            <!-- Current: "bg-gray-100 text-gray-900", Default: "text-gray-600 hover:bg-gray-50 hover:text-gray-900" -->
+            <a href="{{ .URL }}" class="{{if or ($currentPage.IsMenuCurrent "developers" .) ($currentPage.HasMenuCurrent "developers" .) }}bg-gray-200 text-gray-900{{else}}text-gray-600 hover:bg-gray-50 hover:text-gray-900{{ end }} group flex items-center px-2 py-1 text-base font-medium rounded-md">
+                <span>{{ .Pre }}</span>
+                {{ .Name }}
+            </a>
+        {{ end }}
+        {{ end }}
+    </div>
+</nav>

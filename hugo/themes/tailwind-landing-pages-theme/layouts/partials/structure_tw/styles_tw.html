@@ -9,6 +9,7 @@
     {{ $twstyles = $twstyles | resources.ExecuteAsTemplate (printf "tailwind.dev.%v.css" now.UnixMilli) .}}
 {{ end }}
 {{/*  <link href="{{ $twstyles.RelPermalink }}" rel="stylesheet" />  */}}
+<!-- Tailwind -->
 <style>
   {{ $twstyles.Content  | safeCSS }}
 </style>

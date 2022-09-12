@@ -1,0 +1,121 @@
+{{ define "hero"}}
+{{/*  <header class="header-hero mb4">  */}}
+<header class="header-hero">
+    {{ if isset .Params "headerimage"}}
+    {{ partial "_shared/hero-image-srcset" . }}
+    {{ end }}
+</header>
+{{/*  {{ if isset .Params "logo" }}
+    <amp-img class="img-responsive" alt="{{ .Params.brandname }}" src="{{ .Params.logo }}" width="1024" height="400"
+        layout="responsive">
+    </amp-img>
+{{ end }}  */}}
+
+<div>
+<!-- Hero card -->
+{{/*  <div class="relative">
+    <div class="absolute inset-x-0 bottom-0 h-1/2 bg-gray-100"></div>
+    <div class="mx-auto max-w-7xl sm:px-6 lg:px-8">
+      <div class="relative shadow-xl sm:overflow-hidden sm:rounded-2xl">
+        <div class="absolute inset-0">
+            {{ partial "_shared/hero-image-srcset" . }}
+        </div>
+        <div class="relative px-4 py-16 sm:px-6 sm:py-24 lg:py-32 lg:px-8">
+          <div class="mx-auto mt-10 max-w-sm sm:flex sm:max-w-none sm:justify-center">
+            <div class="space-y-4 sm:mx-auto sm:inline-grid sm:grid-cols-2 sm:gap-5 sm:space-y-0">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>  */}}
+
+  <!-- Logo cloud -->
+  <div class="bg-gray-100">
+    {{/*  max-w-7xl  */}}
+    <div class="mx-auto max-w-prose text-xl py-8 px-4 sm:px-6 lg:px-8 ">
+      {{/*  <p class="text-center text-base font-semibold text-gray-500">Trusted by over 5 very average small businesses</p>  */}}
+      {{/*  <div class="mt-6 grid grid-cols-2 gap-8 md:grid-cols-6 lg:grid-cols-5">          */}}
+      <div class="grid grid-cols-2 sm:grid-cols-2 gap-8 md:grid-cols-4 lg:grid-cols-4">        
+        {{ if isset .Params "logo" }}
+    <div class="rounded-md border border-transparent bg-white px-8 py-3 text-base font-medium text-rose-700 shadow-sm drop-shadow sm:px-8">
+    <amp-img class="img-responsive" alt="{{ .Params.brandname }}" src="{{ .Params.logo }}" width="1024" height="400"
+        layout="responsive">
+    </amp-img>
+    </div>
+{{ end }}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+{{ end }}
+{{ define "title"}}<div></div>{{/* Disable the regular title */}}{{ end }}
+{{ define "main-blank"}}
+<main>
+    <div class="relative py-16 bg-white overflow-hidden">
+        <div class="hidden lg:block lg:absolute lg:inset-y-0 lg:h-full lg:w-full">
+          <div class="relative h-full text-lg max-w-prose mx-auto" aria-hidden="true">
+            <svg class="absolute top-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+              <defs>
+                <pattern id="74b3fd99-0a6f-4271-bef2-e80eeafdf357" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="404" height="384" fill="url(#74b3fd99-0a6f-4271-bef2-e80eeafdf357)" />
+            </svg>
+            <svg class="absolute top-1/2 right-full transform -translate-y-1/2 -translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+              <defs>
+                <pattern id="f210dbf6-a58d-4871-961e-36d5016a0f49" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="404" height="384" fill="url(#f210dbf6-a58d-4871-961e-36d5016a0f49)" />
+            </svg>
+            <svg class="absolute bottom-12 left-full transform translate-x-32" width="404" height="384" fill="none" viewBox="0 0 404 384">
+              <defs>
+                <pattern id="d3eb07ae-5182-43e6-857d-35c643af9034" x="0" y="0" width="20" height="20" patternUnits="userSpaceOnUse">
+                  <rect x="0" y="0" width="4" height="4" class="text-gray-200" fill="currentColor" />
+                </pattern>
+              </defs>
+              <rect width="404" height="384" fill="url(#d3eb07ae-5182-43e6-857d-35c643af9034)" />
+            </svg>
+          </div>
+        </div>
+        <div class="relative px-4 sm:px-6 lg:px-8">
+          <div class="text-lg max-w-prose mx-auto">
+            <h1>
+              {{/*  <span class="block text-lg text-center text-rose-600 font-semibold ">{{ .Section }}</span>  */}}
+              {{/*  <span class="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">{{ .Title }}</span>  */}}
+            </h1>
+            {{/*  <p class="mt-8 text-xl text-gray-500 leading-8">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>  */}}
+          </div>
+          <div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto ebp{{ if isset .Params "brand" }} ebp-{{ .Params.brand }}{{ end }} prose prose-lg">
+                {{ .Content }}
+        </div>
+        {{/*  {{- partial "_shared/after-post-tags" . }}  */}}
+      </div>
+    </div>
+    </main>
+
+
+
+
+
+
+
+{{ end }}
+
+{{ define "main"}}
+{{/*  <div class="grid-content section-jobs">
+    {{ if isset .Params "logo" }}
+    <div class="ebp-logo px-16 py-4 z-10 bg-white">
+        <amp-img class="img-responsive" alt="{{ .Params.brandname }}" src="{{ .Params.logo }}" width="1024" height="400"
+            layout="responsive">
+        </amp-img>
+    </div>
+    {{ end }}
+</div>  */}}
+{{ end }}

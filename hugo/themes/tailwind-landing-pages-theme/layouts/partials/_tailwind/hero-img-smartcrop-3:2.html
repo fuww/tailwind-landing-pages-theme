@@ -1,0 +1,26 @@
+{{ $figcaption := .Params.figcaption }}
+
+{{/* 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 3:2 */}}
+
+{{ $imageSrc := .featured }}
+{{/*  {{ $imageSrc := (.Resources.ByType "image").GetMatch $page.Params.image }} */}}
+{{ $placeholder := $imageSrc.Resize "48x32 smart q20" }}
+{{ $placeholder = $placeholder.Filter (images.GaussianBlur 6) }}
+
+{{ $resized1200 := $imageSrc.Fill "1200x800 smart" }}
+{{ $resized720 := $imageSrc.Fill "600x400 smart" }}
+
+<figure>
+    <amp-img src="{{ $resized1200.RelPermalink }}" srcset="
+    {{ $resized1200.RelPermalink }} 1200w,
+    {{ $resized720.RelPermalink }} 720w,
+    {{ ($imageSrc.Fill "300x200 smart").RelPermalink }} 300w
+    " alt="{{ .Title }}" layout="responsive" width="3" height="2">
+        <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
+        </amp-img>
+    </amp-img>
+{{ with .Page.Params.figcaption }}
+    <figcaption class="pl2 mt1 z1 imageCaption">{{ . }}</figcaption>
+    </figure>
+{{ end }}
+</figure>

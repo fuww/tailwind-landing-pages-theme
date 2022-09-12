@@ -1,0 +1,84 @@
+{{ define "title"}}<div></div>{{/* Disable the regular title */}}{{ end }}
+{{ define "nav" }}<div></div>{{/* Disable the regular title */}}{{ end }}
+{{ define "main-blank" }}
+<div class="min-h-screen flex flex-col">
+    <div class="flex-1 flex flex-col sm:flex-row">
+            <main class="flex-1">
+                    {{/*  main content bg-indigo-100  */}}
+                    <article>
+                            {{ with .Resources.ByType "csv" }}
+                            <section class="prose">
+                                    <div class="Csv">
+                                            {{ range . }}
+                                            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+                                            {{ end }}
+                                    </div>
+                            </section>
+                            {{ end }}
+                            <div class="relative px-4 sm:px-6 lg:px-8">
+                                    <div class="text-lg max-w-prose mx-auto">
+                                            <h1>
+                                                    <span
+                                                            class="block text-lg text-center text-rose-600 font-semibold ">{{ .Section }}</span>
+                                                    <span
+                                                            class="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">{{ .Title }}</span>
+                                            </h1>
+                                            {{/*  <p class="mt-8 text-xl text-gray-500 leading-8">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>  */}}
+                                    </div>
+                                    <div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
+                                            {{ .Content }}
+                                    </div>
+                                    <div class="mx-auto">
+                                        <ul role="list" class="divide-y divide-gray-200">
+                                            {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 100 }}
+                                            {{ range $post_paginator.Pages }}
+                                            {{- partial "_tailwind/twoline" . -}}
+                                            {{end}}
+                                        </ul>
+                                    </div>
+                                    {{- partial "_shared/after-post-tags" . }}
+                            </div>
+                    </article>
+                    {{- partial "_shared/after-post-tags" . }}
+            </main>
+
+
+
+            <nav class="order-first sm:w-32 md:w-64 ">
+                    {{/*  Left nav  bg-purple-200 */}}
+                    <div class="pt-1 border-r border-gray-200 bg-gray-100 rounded-md">
+                            {{- partial "_tailwind/menu-developers.html" . -}}
+                    </div>
+            </nav>
+
+            <aside class="sm:w-32 md:w-64 ">
+                    {{/*  right sidebar  bg-yellow-100*/}}
+                    <div class="mt-4">
+                            <div class="pt-2">
+                            {{- partial "toc.html" . -}}
+
+                            {{ with .Resources.ByType "csv" }}
+                            <section class="prose">
+                                    <p class="font-bold px-2">Downloads</p>
+                                    <div class="Csv">
+                                            {{ range . }}
+                                            <a href="{{ .RelPermalink }}">{{.Title}}</a>
+                                            {{ end }}
+                                    </div>
+                            </section>
+                            {{ end }}
+                            </div>
+                    </div>
+            </aside>
+    </div>
+
+
+</div>
+{{ end }}
+{{ define "main" }}
+{{ end }}
+{{ define "main-blank" }}
+{{ end }}
+{{ define "source-link" }}{{- partial "_tailwind/source-link" . -}}{{ end }}
+
+

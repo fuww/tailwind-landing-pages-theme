@@ -1,0 +1,27 @@
+{{ define "hero" }}
+{{ partial "_tailwind/hero-company" . }}
+{{ end }}
+{{ define "nav" }}
+{{/*  {{- partial "_shared/menu-company.html" . -}}  */}}
+{{ end }}
+{{ define "title" }}<span></span>{{/* Disable the title */}}{{ end }}
+{{ define "main" }}<span></span>{{/* Disable the main */}}{{ end }}
+{{ define "main-blank" }}
+
+{{/*  {{- partial "_tailwind/simple-three-column" . -}}  */}}
+
+{{/*  {{- partial "_tailwind/side-by-side-company" . -}}  */}}
+
+
+
+<div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
+    {{ .Content }}
+</div>
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-5xl mx-auto">
+    {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+    {{- partial "_tailwind/card" . -}}
+    {{ end }}
+</div>
+
+{{/*  {{- partial "_shared/menu-company.html" . -}}  */}}
+{{ end }}

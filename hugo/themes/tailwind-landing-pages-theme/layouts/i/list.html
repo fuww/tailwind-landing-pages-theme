@@ -1,0 +1,30 @@
+{{ define "header"}}
+{{- partial "_shared/navigation" . -}}
+{{ end }}
+{{ define "main-blank" }}
+<div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
+    {{ .Content }}
+</div>
+<div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-5xl mx-auto">
+    {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+    {{- partial "_tailwind/card" . -}}
+    {{ end }}
+</div>
+{{ end }}
+{{ define "main" }}
+<!-- <section class="grid-content recent-posts">
+    <div class="section-title">
+    </div>
+    
+    <div class="row listrecent">
+        <div class="grid__cards">
+            {{- $post_paginator := .Paginate .Data.Pages.ByDate.Reverse 100 }}
+            {{ range where $post_paginator.Pages "Params.hidden" "ne" true }}
+            {{- partial "list/card" . -}}
+            {{end}}
+        </div>
+    </div>
+</section> -->
+{{ end }}
+{{ define "footer"}}
+{{ end }}

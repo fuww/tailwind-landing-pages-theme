@@ -37,11 +37,11 @@
         {{else}}
     {{ end }}
 
-    --font1-ebp: {{ if isset .Params "primary_font_family_ebp" }}
-        {{ .Params.primary_font_family_ebp | safeCSS }}
+    --font1-ebp: {{ if isset .Params "font1_ebp" }}
+        {{ .Params.font1_ebp | safeCSS }}
       , {{ end }}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-    --font2-ebp: {{ if isset .Params "secondary_font_family_ebp" }}
-        {{ .Params.secondary_font_family_ebp | safeCSS }}
+    --font2-ebp: {{ if isset .Params "font2_ebp" }}
+        {{ .Params.font2_ebp | safeCSS }}
       , {{ end }}-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
     --primary-font-weight-ebp: {{ if isset .Params "primary_font_weight_ebp" }}
         {{ .Params.primary_font_weight_ebp | safeCSS }}

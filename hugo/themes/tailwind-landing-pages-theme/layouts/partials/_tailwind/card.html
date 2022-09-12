@@ -1,5 +1,5 @@
 <div class="bg-white overflow-hidden shadow rounded-lg divide-y divide-gray-200">
-  <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="text-decoration-none">
+  <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline">
 
   {{ if isset .Params "imagecard"}}
   {{ partial "_shared/card-image-custom" . }}

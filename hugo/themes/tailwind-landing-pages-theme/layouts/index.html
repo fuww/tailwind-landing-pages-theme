@@ -1,0 +1,44 @@
+{{ define "head"}}{{ partial "structure_tw/head" . }} {{/* Body starts inside head-amp */}}{{ end }}
+{{ define "hero"}}{{ end }}
+{{ define "breadcrumbs"}}
+<div></div>{{/* DUMMY COMMENT to override */}}{{ end }}
+{{ define "title"}}
+<div></div>{{/* DUMMY COMMENT to override */}}{{ end }}
+{{/*  {{- partial "landing-page-sections/examples/showcase.html" . -}} */}}
+{{ define "main-blank" }}
+{{/*  In development: show a list of all pages for quick access when testing */}}
+{{ if .Site.BuildDrafts }}
+<div class="section-content post">
+    <ul role="list" class="divide-y divide-gray-200">
+        {{ range .Site.Pages }}
+        {{- partial "_tailwind/twoline" . -}}
+        {{ end }}
+    </ul>
+</div>
+{{ end }}
+<div class="max-w-7xl mx-auto">
+    <div class="m-8 md:m-16 center">
+        {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkNews "name" "News" "class" "m-4 sm:m-8 md:m-12") -}}
+        {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkJobs "name" "Jobs" "class" "m-4 sm:m-8 md:m-12") -}}
+        {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkBI "name" "Business Intelligence" "class" "m-4 sm:m-8 md:m-12") -}}
+    </div>
+    <div class="my-16 prose prose-lg mx-auto">
+        <h2 class="text-center">FashionUnited: making the industry more efficient and transparent.</h2>
+        <p class="text-center my-4">
+            FashionUnited is the online platform for fashion professionals, which combines the latest fashion news,
+            career opportunities,
+            business intelligence and crucial industry insights on just one platform in 20+ countries and 8 languages.
+            Supporting
+            fashion professionals and -enterprises is at our heart. For that reason we provide our visitors with
+            high-quality, to
+            the point insights and information in their local language, next to offering customized HR & Marketing
+            solutions to our
+            international customers. Over 1 million industry experts visit FashionUnited every month to be in the know,
+            to start
+            a new professional challenge or to drive their fashion business even further.</p>
+    </div>
+    <h1 class="text-center h1 my-16 pt-16">The Industry Network</h1>
+</div>
+{{ end }}
+{{ define "footer"}}{{ end }}
+

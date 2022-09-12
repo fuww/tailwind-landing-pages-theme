@@ -1,0 +1,26 @@
+{{ define "hero" }}
+{{ partial "_tailwind/hero-company" . }}
+{{ end }}
+{{ define "nav" }}
+<div class="main-nav left-bar">
+        {{ if (not (isset .Params "disablemenu")) }}
+        {{/*  {{- partial "_shared/menu-company.html" . -}}  */}}
+        {{ end }}
+</div>
+{{ end }}
+{{ define "title" }}<span></span>{{ end }}
+{{ define "main-blank" }}
+<div class="relative px-4 sm:px-6 lg:px-8">
+        
+        {{/*  <div class="mx-auto max-w-prose text-lg">
+                {{- partial "_shared/title" . -}}
+        </div>  */}}
+
+        <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+                {{ .Content }}
+        </div>
+
+</div>
+{{ end }}
+{{ define "main" }}
+{{ end }}

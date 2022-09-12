@@ -31,8 +31,6 @@
     {{ partial "structure/scripts-amp" . }}
     {{/*  amp styling, for backwards compatibility & amp shortcodes / amp-img etc.  */}}
     {{ partial "structure/styles" . }}
-    {{/*  Tailwind CSS will overwrite styles from the amp-theme  */}}
-    {{ partial "structure_tw/styles_tw" . }}
     <link rel="icon" href="https://media.fashionunited.com/media/favicon/dark/favicon.ico" />
     <link rel="apple-touch-icon" sizes="60x60"
         href="https://media.fashionunited.com/media/favicon/dark/apple-touch-icon-60x60.png" />
@@ -68,6 +66,10 @@
 </head>
 
 <body>
+
+    {{/*  Tailwind CSS will overwrite styles from the amp-theme, must be in body to be picked up by next.js (for now)  */}}
+    {{ partial "structure_tw/styles_tw" . }}
+
     {{ if isset $.Site.Params "ampmanifest" }}
     {{ with $.Site.Data.app.banner }}{{ partial "amp/app-banner" . }}{{ end }}
     {{ end }}
