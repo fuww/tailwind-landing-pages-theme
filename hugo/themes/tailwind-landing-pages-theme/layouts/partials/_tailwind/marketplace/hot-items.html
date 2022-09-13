@@ -1,0 +1,313 @@
+<!-- Hot items - Popular -->
+{{/*  https://discourse.gohugo.io/t/range-index-to-catch-first-item-and-last/10764  */}}
+
+{{/*  {{ range (index .Site.Data.marketplace.hot_items ) }}
+{{ range (index .brands ) }}  */}}
+
+{{/*  {{ range $index, $value := .Site.Data.marketplace.hot_items.brands }}
+  <article class="{{ if (eq $index 0) }}first{{ end }}"></article>
+  {{ if eq (add $i 1) (len $paginator.Pages) }}last{{ end }}
+{{ end }}  */}}
+
+{{/*  eerste: mkt-popular-tilt-right
+laatste: mkt-popular-tilt-left  */}}
+
+<section class="animate-none pb-16 pt-16 relative">
+  <header class="max-w-6xl mx-auto px-2 md:px-16">
+    <h3 class="h1 bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
+    <h3 class="h1 bold leading-5 hidden md:block center">Hot Trends</h3>
+  </header>
+  <div class="overflow-scroll">
+    {{/*   inline-block overflow-x-auto  */}}
+    <div class="mkt-overflow-container">
+      <div class="flex px-2 md-px-16 mxn1">
+
+        {{ range (index .Site.Data.marketplace.hot_items ) }}
+        {{ range (index .items ) }}
+        <div class="m-4 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb-2">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="{{ .href }}">
+                <amp-img class="bg-gray-50 block rounded" width="300" height="400" noloading=""
+                  src="{{ .image }}">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb-2">
+            <span class="mkt-rslts-rslt-text">{{ .title }}</span>
+            {{/*  <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->  */}}
+          </div>
+        </div>
+
+        {{ end }}
+        {{ end }}
+
+
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+{{/*  CSS omzetten
+  :root .mkt-popular .mkt-rslts-rslt {
+  animation: none;
+}
+
+.mkt-popular-tilt-left,
+.mkt-popular-tilt-right {
+  display: inline-block;
+  position: relative;
+  perspective: 1000px;
+  perspective-origin: 50% calc(100% + 4rem);
+}
+
+.mkt-popular-tilt-left .mkt-rslts-rslt {
+  transform-origin: 0 0;
+  transform: rotateY(-15deg);
+}
+
+.mkt-popular-tilt-right .mkt-rslts-rslt {
+  transform-origin: 100% 0;
+  transform: rotateY(15deg);
+}
+
+.mkt-popular-tilt-left:before,
+.mkt-popular-tilt-right:before {
+  content: '';
+  display: block;
+  position: absolute;
+  top: 3rem;
+  right: 3rem;
+  bottom: 2rem;
+  left: 3rem;
+  box-shadow: 0 0 2.2rem 2.2rem rgba(50, 58, 67, 0.2);
+}
+
+.mkt-popular-tilt-left:before {
+  transform-origin: 2rem calc(100% + 2rem);
+  transform: translateY(0.28rem) rotate(2.5deg);
+}
+
+.mkt-popular-tilt-right:before {
+  transform-origin: calc(100% + 2rem) calc(100% + 2rem);
+  transform: translateY(0.28rem) rotate(-2.5deg);
+}
+
+.mkt-rslts-rslt {
+  animation: a 0.4s ease-in-out both;
+  animation-delay: 0.11s;
+}
+
+.mkt-rslts-rslt-link {
+  border-radius: 4px;
+}
+
+.mkt-rslts-rslt-link amp-img {
+  background-color: #e3e5e8;
+}
+
+.mkt-rslts-rslt-text {
+  color: #323a43;
+}
+
+.mkt-rslts-rslt-subtext {
+  color: #8f98a3;
+}
+
+.mkt-rslts-rslt-stars {
+  color: #e3e5e8;
+}
+
+.mkt-rslts-rslt-stars.green {
+  color: #47b074;
+}
+
+.mkt-rslts-rslt-flags,
+.mkt-rslts-rslt-like {
+  pointer-events: none;
+}
+
+.mkt-rslts-rslt-flags > *,
+.mkt-rslts-rslt-like > * {
+  pointer-events: all;
+}
+
+.mkt-rslts-rslt-flags,
+.mkt-rslts-rslt-like,
+.mkt-rslts-rslt-link {
+  transition: transform 0.2s;
+}
+
+.mkt-rslts-rslt-link:focus,
+.mkt-rslts-rslt:hover .mkt-rslts-rslt-link {
+  outline: none;
+}
+
+.mkt-rslts-rslt-link:focus,
+.mkt-rslts-rslt-link:focus ~ .mkt-rslts-rslt-flags,
+.mkt-rslts-rslt-link:focus ~ .mkt-rslts-rslt-like,
+.mkt-rslts-rslt:hover .mkt-rslts-rslt-flags,
+.mkt-rslts-rslt:hover .mkt-rslts-rslt-like,
+.mkt-rslts-rslt:hover .mkt-rslts-rslt-link {
+  transform: translateY(-0.5rem);
+}
+
+  */}}
+
+
+
+
+
+
+
+{{/*  
+<section class="mkt-popular pb4 pt3 relative">
+  <header class="max-w-6xl mx-auto px-2 md-px-16">
+    <h3 class="h1 bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
+    <h3 class="h1 bold leading-5 hidden md:block center">Hot Trends</h3>
+  </header>
+  <div class="overflow-scroll">
+    <div class="mkt-overflow-container">
+      <div class="flex px-2 md-px-16 mxn1">
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-popular-tilt-right mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_floral_maxi_dress.png"></amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The floral maxi dress</span>
+            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Denim bermuda</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_hot_pink_hue.jpeg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The hot pink hue</span>
+            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_little_black_dress.jpeg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The little black dress</span>
+            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Sahara colours</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_oversized_blazer.jpg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The oversized blazer</span>
+            <!--   <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Chucky footwear</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_polo_shirt.jpg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The polo shirt</span>
+            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Wrapped dresses</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-rslts-rslt relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_shearling_aviator.jpg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The shearling aviator</span>
+            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+                <span class="mkt-rslts-rslt-subtext h3">BART - JUNE BUG</span> -->
+          </div>
+        </div>
+
+        <div class="m2 mt-8 mb-4">
+          <div class="mkt-popular-tilt-left relative mb1">
+            <div class="relative mkt-rslts-rslt">
+              <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                <amp-img class="block rounded" width="300" height="400" noloading=""
+                  src="/marketplace/images/The_dressy_jumpsuit.jpg">
+                </amp-img>
+              </a>
+            </div>
+          </div>
+
+          <div class="h2 leading-5 mb1">
+            <span class="mkt-rslts-rslt-text">The dressy jumpsuit</span>
+            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->
+          </div>
+        </div>
+        <!--
+          <div class="m2 mt-8 mb-4">
+            <div class="mkt-popular-tilt-left mb1 mb1">
+              <div class="relative mkt-rslts-rslt">
+                <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
+                  <amp-img class="block rounded" width="300" height="400" noloading=""
+                    src="/marketplace/images/300x400-20211026-sweatshirt.jpg">
+                  </amp-img>
+                </a>
+              </div>
+            </div>
+            <div class="h2 leading-5 mb1">
+              <span class="mkt-rslts-rslt-text">Sweatshirt</span>
+            </div>
+          </div> -->
+      </div>
+    </div>
+  </div>
+</section>  */}}
+<!--/ Hot items - Popular -->

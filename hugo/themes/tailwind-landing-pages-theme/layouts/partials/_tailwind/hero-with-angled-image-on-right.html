@@ -29,28 +29,7 @@
       </div>
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-      {{/*  <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://media.fashionunited.com/media/landing-pages/jc-gellidon-2-flipq60.jpg" alt="">  */}}
-
-      {{- with $.Params.images -}}
-      {{- $images := $.Resources.ByType "image" -}}
-      {{- $featured := $images.GetMatch (index . 0) -}}
-      {{ partial "_tailwind/hero-img-smartcrop-3:2" (dict "context" . "featured" $featured) }}
-      {{ else -}}
-      {{- $images := $.Resources.ByType "image" -}}
-      {{- $featured := $images.GetMatch "*feature*" -}}
-      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
-      {{- with $featured -}}
-      {{ partial "_tailwind/hero-img-smartcrop-3:2" (dict "context" . "featured" $featured) }}
-      {{- else -}}
-      {{- with $.Site.Params.images -}}
-      {{- $featured := $images.GetMatch (index . 0) -}}
-      {{ else -}}
-      {{/*  something else  */}}
       <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://media.fashionunited.com/media/landing-pages/jc-gellidon-2-flipq60.jpg" alt="">
-      {{- end -}}
-      {{- end -}}
-      {{- end }}     
-
     </div>
   </div>
   

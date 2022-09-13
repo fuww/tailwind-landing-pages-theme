@@ -1,0 +1,103 @@
+<!-- Top Brands - Featured -->
+{{/*  {{ index .Site.Data.urls (split (.Get 0) ".")}}  */}}
+
+{{/*  {{$brand := index (.Site.Data.marketplace.top_brands.brands) 0 }}
+<h3>{{$brand}}</h3>  */}}
+
+{{/*  {{- with $.Site.Data.marketplace.top_brands.brands -}}
+{{- $brand := $brand.GetMatch (index . 0) -}}
+{{- $brand := .brands (index . 0) -}}
+{{ $brand := .brand }}
+{{ $brand }}
+{{ end }}  */}}
+
+{{/*  https://discourse.gohugo.io/t/range-index-to-catch-first-item-and-last/10764  */}}
+
+<section class="mkt-featured pb-16 pt-16 relative clearfix">
+  <header class="max-w-lg mx-auto px-2 md-px-16 relative">
+    <h3 class="mkt-ft-heading h1 bold leading-5 mb-4 center">Top Brands</h3>
+  </header>
+  <div class="featured-flex">
+    {{/*  (index .Site.Data .Params.supplier .Params.ramtype)  */}}
+    {{ range (index .Site.Data.marketplace.top_brands ) }}
+    {{ range (index .brands ) }}
+    <a href="{{ .href }}" class="rounded mkt-ft-tile flex flex-auto relative overflow-hidden mkt-ft-clr-blue">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="500" height="507" src="{{ .image }}">
+      </amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading caps bold leading-5 h3">{{ .title }}</div>
+      </div>
+    </a>
+    {{ end }}
+    {{ end }}
+  </div>
+</section>
+{{/*  {{ $brands = .Site.Data.marketplace.top_brands.brands }}
+{{ range $index, $brand := $brands }}
+{{ $brand }} is at index {{ $index }}
+{{ end }} */}}
+
+{{/*  <div>
+  {{ range .Site.Data.marketplace.top_brands.brands }}
+<h1 value="{{ .title }}">{{ .title }}</h1>
+{{ end }}
+</div> */}}
+
+{{/*  <section class="mkt-featured pt3 relative clearfix">
+  <header class="max-w-lg mx-auto px-2 md-px-16 relative">
+    <h3 class="mkt-ft-heading h1 bold leading-5 mb-4 center">Top Brands</h3>
+  </header>
+  <div class="featured-flex">
+    <a href="/markets/1/products?brandIds=131772"
+      class="mkt-ft-tile flex flex-auto relative overflow-hidden mkt-ft-clr-blue"
+      on="tap:AMP.setState({fields_query: 'NED', query_query: 'NED'})">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="500" height="507"
+        src="/marketplace/img/brands/NED-1.jpg"></amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading caps bold leading-5 h3">NED</div>
+      </div>
+    </a>
+    <a href="/markets/1/products?brandIds=123628"
+      class="mkt-ft-tile flex flex-auto relative overflow-hidden mkt-ft-clr-blue"
+      on="tap:AMP.setState({fields_query: 'Alter Ego', query_query: 'Alter Ego'})">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="500" height="507"
+        src="/marketplace/img/brands/Alter-Ego.jpg"></amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading caps bold leading-5 h3">Alter Ego</div>
+      </div>
+    </a>
+    <a href="/markets/1/products?brandIds=120999"
+      class="mkt-ft-tile flex flex-auto relative overflow-hidden mkt-ft-clr-cyan"
+      on="tap:AMP.setState({fields_query: 'Ana Dyla', query_query: 'Ana Dyla'})">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="500" height="507"
+        src="/marketplace/img/brands/Ana-dyla-1.jpg"></amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading bold caps leading-5 h3">Ana Dyla</div>
+        <!-- <div class="h5">68 adventures</div> -->
+      </div>
+    </a>
+  </div>
+  <div class="featured-flex">
+    <a href="/markets/1/products?brandIds=122415"
+      class="mkt-ft-tile flex flex-auto pointer overflow-hidden relative mkt-ft-clr-purple"
+      on="tap:AMP.setState({fields_query: 'Kaai', query_query: 'Kaai'})">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="500" height="207"
+        src="/marketplace/img/brands/KAAI-1.jpg"></amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading caps bold leading-5 h3">Kaai</div>
+        <!-- <div class="h5">500+ adventures</div> -->
+      </div>
+    </a>
+
+    <a href="/markets/1/products?brandIds=131683"
+      class="mkt-ft-tile flex flex-auto relative overflow-hidden mkt-ft-clr-blue"
+      on="tap:AMP.setState({fields_query: 'Niza', query_query: 'Niza'})">
+      <amp-img class="mkt-object-cover flex-auto" layout="responsive" width="264" height="286"
+        src="/marketplace/img/brands/Niza-1.jpg"></amp-img>
+      <div class="mkt-ft-overlay absolute z1 center right-0 bottom-0 left-0 white p-4">
+        <div class="mkt-ft-tile-heading caps bold leading-5 h3">Niza</div>
+      </div>
+    </a>
+  </div>
+</section>  */}}
+<!--/ Top Brands - Featured -->

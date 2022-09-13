@@ -1,33 +1,35 @@
+{{ block "head" . }}
 {{ partial "structure_tw/head" . }} {{/* Body starts inside head-amp */}}
+{{ end }}
 <div></div>
 {{/*  {{ block "navigation" . }}{{ partial "_tailwind/navigation" . }}{{ end }}  */}}
-{{ block "hero" . }}
-<header class="hero header-hero">
-    {{ partial "_shared/hero" . }}
-</header>
-{{ end }}
-</div>{{/* {{ partial "_tailwind/debug-page-resources.html" . }} */}}
-<main class="main-content" id="main-content">
-    <div class="grid-wrapper">
+{{/* {{ partial "_tailwind/debug-page-resources.html" . }} */}}
+<main>
+    <div class="">
+    {{ block "hero" . }}
+        {{ partial "_shared/hero" . }}
+    {{ end }}
+    </div>
+    {{/*  <div class="grid-wrapper">
         {{ block "title" . }}
         <div class="grid-header post">
-            <div class="pt-2 pb-2 md:pt-8 md:pb-4">
+            <div class="pt-4 pb-2 md:pt-8 md:pb-4">
                 {{- partial "_tailwind/title" . -}}
             </div>
         </div>
         {{ end }}
         {{ if (not (isset .Params "disablemenu")) }}
-        <div class="grid-nav pt2 pb1 md:pt-8 md:pb-4 px-4">
+        <div class="grid-nav pt-4 pb-2 md:pt-8 md:pb-4 px-4">
             {{ block "nav" . }}{{ end }}
         </div>
         {{ end }}
         {{ block "main" . }}{{ end }}
-        <div class="grid-sidebar pt2 pb1 md:pt-8 md:pb-4 px-4">
+        <div class="grid-sidebar pt-4 pb-2 md:pt-8 md:pb-4 px-4">
             {{ block "sidebar" . }}{{ end }}
         </div>
-    </div>
-</main>
+    </div>  */}}
 {{ block "main-blank" . }}{{ end }}
+</main>
 {{/*  {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}  */}}
 {{ block "source-link" . }}{{ end }}
 {{ partial "structure/footer-amp-scripts" . }}

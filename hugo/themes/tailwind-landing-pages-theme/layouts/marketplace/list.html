@@ -1,0 +1,146 @@
+{{ define "title" }}<span></span>{{/* Disable the title */}}{{ end }}
+{{ define "hero" }}
+{{ partial "_tailwind/hero-marketplace" . }}
+
+{{/*  https://web.archive.org/web/20220730071930/https://fashionunited.com/marketplace  */}}
+
+{{/*  <div class="mkt-hero-bg absolute col-12">
+    <amp-img class="mkt-hero-bg-img absolute" src="/marketplace/img/travel/hero-2-20210719.jpg" height="80vmax"
+      noloading="">
+    </amp-img>
+    <amp-img class="mkt-hero-bg-img absolute" src="/marketplace/img/travel/hero-3.jpg" height="80vmax" noloading="">
+    </amp-img>
+    <amp-img class="mkt-hero-bg-img absolute" src="/marketplace/img/travel/hero1-20210727.jpg" height="80vmax"
+      noloading="">
+    </amp-img>
+  </div>  */}}
+
+{{/*  <!-- Hero -->
+      <section class="mkt-hero relative">
+        <div class="mkt-hero-content max-w-6xl mx-auto absolute top-0 left-0 right-0 flex self-end items-center">
+          <div class="mkt-hero-content-inner relative px-2 md-px-16 flex-auto self-end">
+            <header>
+              <h1 class="mkt-hero-heading mb-4 leading-4">The Global<br class="md:hidden"> B2B Fashion
+                Marketplace</h1>
+              <h2 class="mkt-hero-subheading leading-5 bold hidden md:block">Where apparel buyers find all
+                information and products they need to create the best collections for their consumers.</h2>
+            </header>
+            <!-- Search Form -->
+            <div class="mkt-hero-search">
+              <!-- <label class="mkt-input-icon mkt-shadow flex col-12 relative rounded"> -->
+              <label class="mkt-input-icon flex col-12 relative rounded">
+                <div class="mkt-icon"></div>
+              </label>
+              
+              
+              <!-- my2 > my3 -->
+              <div class="mkt-hero-search-dates flex my3 justify-around">
+                <label class="mkt-date-input relative bold flex-auto"
+                  [class]="'mkt-date-input relative bold flex-auto' + (fields_departure ? ' mkt-date-input-touched' : '')">
+                  <input class="block relative p0 z1" type="date" placeholder="yyyy-mm-dd"
+                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="yyyy-mm-dd" name="departure" on="
+                    change:AMP.setState({
+                      fields_departure: true,
+                      fields_departure_edited: true
+                    })
+                  ">
+                </label>
+                <label class="mkt-date-input relative bold flex-auto"
+                  [class]="'mkt-date-input relative bold flex-auto' + (fields_return ? ' mkt-date-input-touched' : '')">
+                  <input class="block relative p0 z1" type="date" placeholder="yyyy-mm-dd"
+                    pattern="[0-9]{4}-[0-9]{2}-[0-9]{2}" title="yyyy-mm-dd" name="return" on="
+                    change:AMP.setState({
+                      fields_return: true,
+                      fields_return_edited: true
+                    })
+                  " disabled="" [disabled]="!fields_departure">
+                  <div class="mkt-icon"></div>
+                </label>
+              </div>
+              <a href="/markets/1/products" class="ampstart-btn mkt-input-big rounded center bold white block col-12" on="
+                tap:AMP.setState({
+                    ui_reset: false,
+                    ui_filterPane: false,
+                    query_query: fields_query,
+                    fields_query_edited: false,
+                    query_departure: fields_departure,
+                    fields_departure_edited: false,
+                    query_return: fields_return,
+                    fields_return_edited: false,
+                    query_maxPrice: fields_maxPrice,
+                    fields_maxPrice_edited: false,
+                    query_city: fields_city,
+                    fields_city_edited: false,
+                    query_type: fields_type,
+                    fields_type_edited: false,
+                    query_sort: fields_sort,
+                    fields_sort_edited: false,
+                })
+              ">
+                Find Items and Collections
+              </a>
+              <!--/ Search Form -->
+              <a class="mkt-hero-discover block center mx-auto mt1 md:hidden" on="tap:mkt-landing-content.scrollTo">
+                Explore <svg class="mkt-icon" viewBox="0 0 66 100">
+                  <path fill="currentColor"
+                    d="M33.5 56.172l-18.96-18.1c-1.497-1.43-3.922-1.43-5.418 0a3.539 3.539 0 0 0 0 5.17l21.67 20.687a3.914 3.914 0 0 0 2.708 1.07c.98 0 1.96-.357 2.71-1.07l21.668-20.687a3.541 3.541 0 0 0 0-5.172c-1.496-1.427-3.92-1.427-5.417 0L33.5 56.173z">
+                  </path>
+                </svg>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!--/ Hero -->  */}}
+{{ end }}
+{{ define "main-blank"}}
+{{ .Content }}
+
+<div></div>
+
+<section class="mkt-main-wrapper overflow-hidden" role="main">
+    <section class="relative z2">
+        <header class="mkt-header absolute top-0 right-0 left-0">
+            <div class="px-2 md-px-16 py-2 md-py-4 flex justify-between items-center">
+                <a href="#" class="mkt-icon-logo mx-auto inline-block circle">
+                    <div class="mkt-icon mkt-icon-logo h2">
+                    </div>
+                </a>
+            </div>
+        </header>
+    </section>
+
+    <div id="mkt-landing-content" class="mkt-landing-content relative">
+
+        {{ partial "_tailwind/marketplace/angles" . }}
+        {{ partial "_tailwind/marketplace/discover" . }}
+        {{ partial "_tailwind/marketplace/segments" . }}
+
+        <div class="mkt-footer-wrapper">
+
+            {{ partial "_tailwind/marketplace/hot-items" . }}
+            {{ partial "_tailwind/marketplace/top-brands" . }}
+            {{ partial "_tailwind/marketplace/sponsored-messages" . }}
+
+
+
+
+
+
+            {{/*  brand  */}}
+            <section class="mt-16">
+            <div class="bg-rose-700">
+                <div class="mx-auto max-w-7xl py-16 px-4 sm:py-20 sm:px-6 lg:px-8">
+                  <h2 class="text-3xl font-bold tracking-tight text-white">To inspire fashion buyers and
+                    provide access to a worldwide purchasing platform.</h2>
+                </div>
+              </div>
+            </section>
+        </div>
+    </div>
+</section>
+<!--/ Discover mobile-->
+</div>
+</div>
+</section>
+{{ end }}

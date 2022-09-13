@@ -1,4 +1,3 @@
-<!-- This example requires Tailwind CSS v2.0+ -->
 <div class="relative bg-white overflow-hidden">
     <div class="max-w-7xl mx-auto">
       <div class="relative z-10 pb-8 bg-white sm:pb-16 md:pb-20 lg:max-w-2xl lg:w-full lg:pb-28 xl:pb-32 text-white">
@@ -15,12 +14,12 @@
               <span class="block xl:inline">{{ .Title }}</span>
               {{ if isset .Params "sub_title" }}<span class="block text-rose-600 xl:inline">{{ .Params.sub_title}}</span>{{end}}
             </h1>
-            {{/*  <p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat fugiat aliqua.</p>  */}}
+            {{ if isset .Params "hero_p" }}<p class="mt-3 text-base text-gray-500 sm:mt-5 sm:text-lg sm:max-w-xl sm:mx-auto md:mt-5 md:text-xl lg:mx-0">{{ .Params.hero_p}}</p>{{end}}
             <div class="mt-5 sm:mt-8 sm:flex sm:justify-center lg:justify-start">
-              {{/*  <div class="rounded-md shadow">
-                <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 md:py-4 md:text-lg md:px-10"> Get started </a>
+             <div class="rounded-md shadow">
+                <a href="/markets/1/products" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-white bg-rose-600 hover:bg-rose-700 md:py-4 md:text-lg md:px-10"> Find Items and Collections </a>
               </div>
-              <div class="mt-3 sm:mt-0 sm:ml-3">
+              {{/*  <div class="mt-3 sm:mt-0 sm:ml-3">
                 <a href="#" class="w-full flex items-center justify-center px-8 py-3 border border-transparent text-base font-medium rounded-md text-rose-700 bg-rose-100 hover:bg-rose-200 md:py-4 md:text-lg md:px-10"> Live demo </a>
               </div>  */}}
             </div>
@@ -29,7 +28,25 @@
       </div>
     </div>
     <div class="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
+      {{- with $.Params.images -}}
+      {{- $images := $.Resources.ByType "image" -}}
+      {{- $featured := $images.GetMatch (index . 0) -}}
+      {{ partial "_tailwind/hero-img-smartcrop-3:2" (dict "context" . "featured" $featured) }}
+      {{ else -}}
+      {{- $images := $.Resources.ByType "image" -}}
+      {{- $featured := $images.GetMatch "*feature*" -}}
+      {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
+      {{- with $featured -}}
+      {{ partial "_tailwind/hero-img-smartcrop-3:2" (dict "context" . "featured" $featured) }}
+      {{- else -}}
+      {{- with $.Site.Params.images -}}
+      {{- $featured := $images.GetMatch (index . 0) -}}
+      {{ else -}}
+      {{/*  something else  */}}
       <img class="h-56 w-full object-cover sm:h-72 md:h-96 lg:w-full lg:h-full" src="https://media.fashionunited.com/media/landing-pages/jc-gellidon-2-flipq60.jpg" alt="">
+      {{- end -}}
+      {{- end -}}
+      {{- end }}     
     </div>
   </div>
   
@@ -42,4 +59,4 @@
   */}}
 
 
-  {{/*  {{ partial "_tailwind/hero-img" (dict "context" . ) }}  */}}
+  {{/*  {{ partial "_tailwind/hero-with-angled-image-on-right-img" (dict "context" . ) }}  */}}

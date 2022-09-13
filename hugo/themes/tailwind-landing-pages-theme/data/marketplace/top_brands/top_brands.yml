@@ -1,0 +1,21 @@
+brands:
+- title: "NED"
+  href: "/markets/1/products?brandIds=131772"
+  image: "/marketplace/img/brands/NED-1.jpg"
+
+- title: "Alter Ego"
+  href: "/markets/1/products?brandIds=123628"
+  image: "/marketplace/img/brands/Alter-Ego.jpg"
+
+- title: "Ana Dyla"
+  href: "/markets/1/products?brandIds=120999"
+  image: "/marketplace/img/brands/Ana-dyla-1.jpg"
+
+- title: "Kaai"
+  href: "/markets/1/products?brandIds=122415"
+  image: "/marketplace/img/brands/KAAI-1.jpg"
+
+- title: "Niza"
+  href: "/markets/1/products?brandIds=131683"
+  image: "/marketplace/img/brands/Niza-1.jpg"
+

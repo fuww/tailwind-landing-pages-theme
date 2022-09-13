@@ -2,14 +2,14 @@
 {{- $images := $.Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch (index . 0) -}}
 {{/*  do something  */}}
-{{ partial "_tailwind/hero-img-smartcrop" (dict "context" . "featured" $featured) }}
+{{ partial "_tailwind/hero-with-angled-image-on-right-img-smartcrop" (dict "context" . "featured" $featured) }}
 {{ else -}}
 {{- $images := $.Resources.ByType "image" -}}
 {{- $featured := $images.GetMatch "*feature*" -}}
 {{- if not $featured }}{{ $featured = $images.GetMatch "{*cover*,*thumbnail*}" }}{{ end -}}
 {{- with $featured -}}
 {{/*  do something  */}}
-{{ partial "_tailwind/hero-img-smartcrop" (dict "context" . "featured" $featured) }}
+{{ partial "_tailwind/hero-with-angled-image-on-right-img-smartcrop" (dict "context" . "featured" $featured) }}
 {{- else -}}
 {{- with $.Site.Params.images -}}
 {{- $featured := $images.GetMatch (index . 0) -}}

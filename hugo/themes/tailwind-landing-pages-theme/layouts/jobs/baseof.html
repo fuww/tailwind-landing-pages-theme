@@ -1,37 +1,22 @@
-{{ partial "structure/head" . }} {{/* Body starts inside head-amp */}}
+{{ block "head" . }}
+{{ partial "structure_tw/head" . }} {{/* Body starts inside head-amp */}}
+{{ end }}
 {{ if not .Params.no_navbar }}
-{{/*  {{ partial "_shared/navigation" . }}  */}}
 {{ end }}
 <div></div>
-{{ block "hero" . }}
-<div class="grid-content header-hero">
-    {{ if isset .Params "headerimage"}}
-    {{ partial "_shared/hero-image-srcset" . }}
-    {{ else }}
-    {{ partial "_shared/hero" . }}
+<main>
+    <div class="">
+    {{ block "hero" . }}
+        {{ if isset .Params "headerimage"}}
+        {{ partial "_shared/hero-image-srcset" . }}
+        {{ else }}
+        {{ partial "_shared/hero" . }}
+        {{ end }}
     {{ end }}
-</div>
-{{ end }}
-{{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
-<main class="main-content" id="main-content">
-    <div class="grid-wrapper">
-
-        {{ block "title" . }}
-
-        <div class="grid-header pt2 pb1 md-pt3 md-pb2 px2">
-            {{- partial "_shared/title" . -}}
-        </div>
-        {{ end }}
-        {{/*  {{ block "breadcrumbs" . }}{{ end }} */}}
-
-        {{ if (not (isset .Params "disablemenu")) }}
-        {{ block "nav" . }}{{ end }}
-        {{ end }}
-
-        {{ block "main" . }}{{ end }}
     </div>
-</main>
+    {{/* {{ partial "_shared/debug-page-resources.html" . }} */}}
 {{ block "main-blank" . }}{{ end }}
+</main>
 {{ if .Params.stand_alone_footer }}
 {{ partial "structure/footer-stand-alone-page" . }}
 {{ else }}

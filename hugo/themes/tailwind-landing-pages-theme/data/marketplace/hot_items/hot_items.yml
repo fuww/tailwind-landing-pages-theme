@@ -1,0 +1,28 @@
+items:
+- title: "The floral maxi dress"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_floral_maxi_dress.png"
+
+- title: "The hot pink hue"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_hot_pink_hue.jpeg"
+
+- title: "The little black dress"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_little_black_dress.jpeg"
+
+- title: "The oversized blazer"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_oversized_blazer.jpg"
+
+- title: "The polo shirt"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_polo_shirt.jpg"
+
+- title: "The shearling aviator"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_shearling_aviator.jpg"
+
+- title: "The dressy jumpsuit"
+  href: "/tags/item-of-the-week"
+  image: "/marketplace/images/The_dressy_jumpsuit.jpg"

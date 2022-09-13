@@ -19,7 +19,7 @@
         <h2 class="font-bold text-xl mb-2">{{.Title}}</h2>
     {{ if isset .Params "images" }} {{/* Show logo below headerimage */}}
     {{ if isset .Params "logo" }}
-    <div class="">
+    <div class="mt-2 mb-4 relative mx-auto" style="width: 124px; height: 60px">
       <amp-img alt="{{.Title}}" layout="fill" class="contain"
         src="{{ if ne .Params.staticdir true }}{{.RelPermalink }}{{end}}{{ .Params.logo }}">
       </amp-img>

@@ -40,7 +40,7 @@
         {{ $375x230.RelPermalink }} 375w,
         {{ $360x240.RelPermalink }} 360w
     " alt="{{ .Title }}" layout="responsive" width="{{ $360x240.Width }}" height="{{ $360x240.Height }}"
-            class="md-hide lg-hide">
+            class="block md:hidden">
             <amp-img placeholder src="{{ $placeholder.RelPermalink }}" layout="fill">
             </amp-img>
         </amp-img>
@@ -52,14 +52,14 @@
     {{ $786x126.RelPermalink }} 768w,
     {{ $375x62.RelPermalink }} 375w
         " alt="{{ .Title }}" layout="responsive" width="{{ $375x62.Width }}" height="{{ $375x62.Height }}"
-            class="xs-hide sm-hide">
+            class="hidden md:block">
             <amp-img placeholder src="{{ ($placeholder_lg).RelPermalink }}" layout="fill">
             </amp-img>
         </amp-img>
 
     </div>
     {{ with .Page.Params.figcaption }}
-    <figcaption class="pl2 mt1 z1 imageCaption">{{ . }}</figcaption>
+    <figcaption class="pl-4 mt1 z1 imageCaption">{{ . }}</figcaption>
 </figure>
 {{ end }}
 </figure>

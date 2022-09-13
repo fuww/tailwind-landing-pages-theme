@@ -1,5 +1,6 @@
 {{ define "hero" }}
-{{ partial "_tailwind/hero-company" . }}
+{{/*  {{ partial "_tailwind/hero-company" . }}  */}}
+{{ partial "_shared/hero" . }}
 {{ end }}
 {{ define "nav" }}
 <div class="main-nav left-bar">
@@ -8,15 +9,15 @@
         {{ end }}
 </div>
 {{ end }}
-{{ define "title" }}<span></span>{{ end }}
+{{/*  {{ define "title" }}<span></span>{{ end }}  */}}
 {{ define "main-blank" }}
 <div class="relative px-4 sm:px-6 lg:px-8">
         
-        {{/*  <div class="mx-auto max-w-prose text-lg">
+        <div class="mx-auto max-w-prose prose-lg pt-8">
                 {{- partial "_shared/title" . -}}
-        </div>  */}}
+        </div>
 
-        <div class="prose prose-lg prose-indigo mx-auto mt-6 text-gray-500">
+        <div class="prose max-w-prose prose-lg prose-rose mx-auto mt-6 text-gray-500">
                 {{ .Content }}
         </div>
 
