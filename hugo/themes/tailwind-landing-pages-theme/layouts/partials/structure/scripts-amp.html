@@ -1,0 +1,23 @@
+{{/* Recommended order: https://www.ampproject.org/docs/fundamentals/optimize_amp  */}}
+{{ if isset $.Site.Params "amp" }}
+{{- $ampCorePath := index (index $.Site.Data "amp-modules") "amp-core" -}}
+<script async src="{{ $ampCorePath }}"></script>{{/*  Import other AMP Extensions here  */}}
+{{- range $.Site.Params.ampElements -}}
+{{- if (index (index $.Site.Data "amp-modules") .) -}}
+<script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>
+{{- end }}{{- end }}
+{{ with .Params.amp.elements }}
+{{ range . }}
+{{ if in $.Site.Params.ampElements . }}
+{{ else }}
+{{- if (index (index $.Site.Data "amp-modules") .) -}}
+<script async custom-element="{{ . }}" src="{{ (index (index $.Site.Data "amp-modules") .) }}"></script>
+{{- end }}{{ end }}
+{{ end }}
+{{ end }}
+{{ if isset $.Site.Params "ampmanifest" }}
+{{ partial "amp/app-banner-header" . }}
+{{ end }}
+{{ end }}
+{{ if isset .Params "googleFontLink" }}
+<link rel="preconnect dns-prefetch" href="{{ .Params.googleFontLink }}" crossorigin>{{ end }}
