@@ -1,4 +1,4 @@
-FROM node:14.16.1-alpine3.13 AS npmmetje
+FROM node:17.3.0-alpine3.13 AS npmmetje
 
 WORKDIR /usr/src/app
 
