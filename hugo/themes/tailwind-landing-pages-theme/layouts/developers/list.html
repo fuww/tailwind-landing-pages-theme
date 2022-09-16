@@ -16,14 +16,14 @@
                             </section>
                             {{ end }}
                             <div class="relative px-4 sm:px-6 lg:px-8">
-                                    <div class="text-lg max-w-prose mx-auto">
+                                    <div class="text-lg font-bold max-w-prose mx-auto">
                                             <h1>
                                                     <span
-                                                            class="block text-lg text-center text-rose-600 font-semibold ">{{ .Section }}</span>
+                                                            class="block text-lg font-bold text-center text-rose-600 font-semibold ">{{ .Section }}</span>
                                                     <span
                                                             class="mt-2 block text-3xl text-center leading-8 font-bold tracking-tight text-gray-900 sm:text-4xl sm:tracking-tight">{{ .Title }}</span>
                                             </h1>
-                                            {{/*  <p class="mt-8 text-xl text-gray-500 leading-8">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>  */}}
+                                            {{/*  <p class="mt-8 text-xl font-bold text-gray-500 leading-8">Aliquet nec orci mattis amet quisque ullamcorper neque, nibh sem. At arcu, sit dui mi, nibh dui, diam eget aliquam. Quisque id at vitae feugiat egestas ac. Diam nulla orci at in viverra scelerisque eget. Eleifend egestas fringilla sapien.</p>  */}}
                                     </div>
                                     <div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
                                             {{ .Content }}
@@ -36,17 +36,21 @@
                                             {{end}}
                                         </ul>
                                     </div>
-                                    {{- partial "_shared/after-post-tags" . }}
+                                    <div class="max-w-prose prose-lg mx-auto">
+      {{- partial "_shared/after-post-tags" . }}
+    </div>
                             </div>
                     </article>
-                    {{- partial "_shared/after-post-tags" . }}
+                    <div class="max-w-prose prose-lg mx-auto">
+      {{- partial "_shared/after-post-tags" . }}
+    </div>
             </main>
 
 
 
             <nav class="order-first sm:w-32 md:w-64 ">
                     {{/*  Left nav  bg-purple-200 */}}
-                    <div class="pt-1 border-r border-gray-200 bg-gray-100 rounded-md">
+                    <div class="pt-1 border-r border-gray-200 bg-neutral-400-100 rounded-md">
                             {{- partial "_tailwind/menu-developers.html" . -}}
                     </div>
             </nav>

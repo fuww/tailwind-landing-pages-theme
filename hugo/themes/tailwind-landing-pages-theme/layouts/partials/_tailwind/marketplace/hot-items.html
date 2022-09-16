@@ -14,13 +14,13 @@ laatste: mkt-popular-tilt-left  */}}
 
 <section class="animate-none pb-16 pt-16 relative">
   <header class="max-w-6xl mx-auto px-2 md:px-16">
-    <h3 class="h1 bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
-    <h3 class="h1 bold leading-5 hidden md:block center">Hot Trends</h3>
+    <h3 class="text-3xl font-bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
+    <h3 class="text-3xl font-bold leading-5 hidden md:block text-center">Hot Trends</h3>
   </header>
   <div class="overflow-scroll">
     {{/*   inline-block overflow-x-auto  */}}
     <div class="mkt-overflow-container">
-      <div class="flex px-2 md-px-16 mxn1">
+      <div class="flex px-2 md:px-16">
 
         {{ range (index .Site.Data.marketplace.hot_items ) }}
         {{ range (index .items ) }}
@@ -28,16 +28,16 @@ laatste: mkt-popular-tilt-left  */}}
           <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="{{ .href }}">
-                <amp-img class="bg-gray-50 block rounded" width="300" height="400" noloading=""
+                <amp-img class="bg-neutral-400-50 block rounded" width="300" height="400" noloading=""
                   src="{{ .image }}">
                 </amp-img>
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb-2">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">{{ .title }}</span>
-            {{/*  <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->  */}}
+            {{/*  <!--  <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Bloom Swimwear</span> -->  */}}
           </div>
         </div>
 
@@ -166,15 +166,15 @@ laatste: mkt-popular-tilt-left  */}}
 
 {{/*  
 <section class="mkt-popular pb4 pt3 relative">
-  <header class="max-w-6xl mx-auto px-2 md-px-16">
-    <h3 class="h1 bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
-    <h3 class="h1 bold leading-5 hidden md:block center">Hot Trends</h3>
+  <header class="max-w-6xl mx-auto px-2 md:px-16">
+    <h3 class="text-3xl font-bold leading-5 md:hidden" aria-hidden="true">Hot Items</h3>
+    <h3 class="text-3xl font-bold leading-5 hidden md:block text-center">Hot Trends</h3>
   </header>
   <div class="overflow-scroll">
     <div class="mkt-overflow-container">
-      <div class="flex px-2 md-px-16 mxn1">
+      <div class="flex px-2 md:px-16">
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-popular-tilt-right mb1">
+          <div class="mkt-popular-tilt-right mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -182,15 +182,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The floral maxi dress</span>
-            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Denim bermuda</span> -->
+            <!--  <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Denim bermuda</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-rslts-rslt relative mb1">
+          <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -199,15 +199,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The hot pink hue</span>
-            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->
+            <!--  <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Bloom Swimwear</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-rslts-rslt relative mb1">
+          <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -216,15 +216,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The little black dress</span>
-            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Sahara colours</span> -->
+            <!-- <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Sahara colours</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-rslts-rslt relative mb1">
+          <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -233,15 +233,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The oversized blazer</span>
-            <!--   <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Chucky footwear</span> -->
+            <!--   <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Chucky footwear</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-rslts-rslt relative mb1">
+          <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -250,15 +250,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The polo shirt</span>
-            <!--  <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Wrapped dresses</span> -->
+            <!--  <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Wrapped dresses</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-rslts-rslt relative mb1">
+          <div class="mkt-rslts-rslt relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -267,15 +267,15 @@ laatste: mkt-popular-tilt-left  */}}
               </a>
             </div>
           </div>
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The shearling aviator</span>
-            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-                <span class="mkt-rslts-rslt-subtext h3">BART - JUNE BUG</span> -->
+            <!-- <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+                <span class="mkt-rslts-rslt-subtext text-lg">BART - JUNE BUG</span> -->
           </div>
         </div>
 
         <div class="m2 mt-8 mb-4">
-          <div class="mkt-popular-tilt-left relative mb1">
+          <div class="mkt-popular-tilt-left relative mb-2">
             <div class="relative mkt-rslts-rslt">
               <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                 <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -285,15 +285,15 @@ laatste: mkt-popular-tilt-left  */}}
             </div>
           </div>
 
-          <div class="h2 leading-5 mb1">
+          <div class="text-xl font-bold leading-5 mb-2">
             <span class="mkt-rslts-rslt-text">The dressy jumpsuit</span>
-            <!-- <span class="mkt-rslts-rslt-subtext h3">&bull;</span>
-              <span class="mkt-rslts-rslt-subtext h3">Bloom Swimwear</span> -->
+            <!-- <span class="mkt-rslts-rslt-subtext text-lg">&bull;</span>
+              <span class="mkt-rslts-rslt-subtext text-lg">Bloom Swimwear</span> -->
           </div>
         </div>
         <!--
           <div class="m2 mt-8 mb-4">
-            <div class="mkt-popular-tilt-left mb1 mb1">
+            <div class="mkt-popular-tilt-left mb-2 mb-2">
               <div class="relative mkt-rslts-rslt">
                 <a class="mkt-rslts-rslt-link block relative" href="/tags/item-of-the-week">
                   <amp-img class="block rounded" width="300" height="400" noloading=""
@@ -302,7 +302,7 @@ laatste: mkt-popular-tilt-left  */}}
                 </a>
               </div>
             </div>
-            <div class="h2 leading-5 mb1">
+            <div class="text-xl font-bold leading-5 mb-2">
               <span class="mkt-rslts-rslt-text">Sweatshirt</span>
             </div>
           </div> -->

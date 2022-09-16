@@ -1,9 +1,9 @@
-<div class="clearfix col-10 center     section--center mdl-grid mdl-grid--no-spacing fu-body-container-position fu-color--white">
+<div class="clearfix col-10 text-center     section--center mdl-grid mdl-grid--no-spacing fu-body-container-position fu-color--white">
         {{ if and (.Params.country) (.Params.continent) }}
         <div class="sm-col sm-col-6 md-col-8 lg-col-7      col-4-xs mdl-cell mdl-cell--7-col mdl-cell--8-col-tablet mdl-cell--4-phone">
             <div class="fu-container-support-text--box">
-                    <h2 class="h4 pb1 fu-statistics-subtitle center border-bottom">{{ .Params.secondary_title }}</h2>
-                <table class="fu-statistics-table--no-margin">
+                    <h2 class="text-base pb1 fu-statistics-subtitle text-center border-bottom">{{ .Params.secondary_title }}</h2>
+                <table class="table-auto">
                     <tbody>
                         <tr>
                             <td align="left">
@@ -55,13 +55,13 @@
         </div>
         <div class="sm-col sm-col-6 md-col-8 lg-col-5    mdl-cell mdl-cell--5-col mdl-cell--8-col-tablet mdl-cell--4-phone fu-statistics-tabs-container">
                 <div class="clearfix pl-4 mt3">
-                        <div class="sm-col sm-col-6 center"><a href="#{{ .Params.country | urlize }}"
-                            class="btn btn-outline center mt0 mb3 inline-block">
+                        <div class="sm-col sm-col-6 text-center"><a href="#{{ .Params.country | urlize }}"
+                            class="btn btn-outline text-center mt0 mb3 inline-block">
                             {{ .Params.country }}
                         </a>
                     </div>
-                        <div class="sm-col sm-col-6 center"><a href="#{{ .Params.continent | urlize }}"
-                            class="btn btn-outline center mt0 mb3 inline-block">
+                        <div class="sm-col sm-col-6 text-center"><a href="#{{ .Params.continent | urlize }}"
+                            class="btn btn-outline text-center mt0 mb3 inline-block">
                             {{ .Params.continent }}
                         </a></div>
                       </div>
@@ -71,7 +71,7 @@
             <div class="fu-container-support-text--box">
                 <h2 class="fu-statistics-subtitle">
                     {{ .Params.secondary_title }}</h2>
-                <hr class="fu-statistics-horizontalrule--normal">
+                <hr>
                 <table class="fu-statistics-table--no-margin">
                     <tbody>
                         <tr>

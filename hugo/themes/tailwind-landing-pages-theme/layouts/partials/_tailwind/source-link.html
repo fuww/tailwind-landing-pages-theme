@@ -1,10 +1,10 @@
 {{ with .File }}
-<div class="text-center text-sm py-1 bg-gray-100 text-gray-400">
+<div class="text-center text-sm py-1 bg-neutral-400-100 text-gray-400">
     {{ $path := (print $.Site.Params.contentRepo .Path) }}
     {{ $webIDEpath := (print $.Site.Params.contentRepoWebIDE .Path) }}
-    Edit <a class="text-gray-500 hover:bg-gray-50 
+    Edit <a class="text-gray-500 hover:bg-neutral-400-50 
     hover:text-gray-900" href="{{ $path }}">this page</a> 
-    &mdash; open <a class="text-gray-500 hover:bg-gray-50 hover:text-gray-900"
+    &mdash; open <a class="text-gray-500 hover:bg-neutral-400-50 hover:text-gray-900"
         href="{{ $webIDEpath }}">Web IDE</a>
 </div>
 {{ end }}

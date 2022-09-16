@@ -1,5 +1,5 @@
 {{ with .File }}
-<div class="center white bg-black heading-font-family">
+<div class="text-center text-white bg-black">
     {{ $path := (print $.Site.Params.contentRepo .Path) }}
     {{ $webIDEpath := (print $.Site.Params.contentRepoWebIDE .Path) }}
     Edit <a class="underline" href="{{ $path }}">this page</a> &mdash; open <a class="underline"

@@ -1,3 +1,6 @@
+{{/* TODO: https://tailwindui.com/components/application-ui/layout/media-objects  */}}
+
+
 {{/*  <div class="flex">
   <div class="mr-4 flex-shrink-0 self-center">
     <div class="h-16 w-16 border border-gray-300 bg-white text-gray-300">
@@ -15,10 +18,24 @@
   </div>
 </div>  */}}
 
+{{/*  <li class="flex">
+  <div class="mr-4 flex-shrink-0 self-center">
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline">
+      {{ partial "_shared/list-image" . }}
+    </a>
+  </div>
+  <div>
+    <span class="text-sm text-gray-600 flex items-center">
+      {{ .WordCount }} words
+    </span>
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline"><h4 class="text-gray-900 font-bold text-lg font-bold my-1">{{.Title}}</h4></a>
+    <p class="text-gray-700 mt-1">{{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}</p>
+    <span class="text-gray-900 leading-none text-sm">{{ if isset .Params "author"}}{{ .Params.Author }}{{ else }}{{end}}</span>
+    <span class="text-gray-500 text-sm">{{ if isset .Params "date"}}{{ .Params.date.Format "January 2, 2006" }}{{ else }}{{end}}</span>
+  </div>
+</li>  */}}
 
 <li class="flex py-4">
-  {{/*  <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="block no-underline">  */}}
-  {{/*  <img class="h-10 w-10 rounded-full" src="https://images.unsplash.com/photo-1491528323818-fdd1faba62cc?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80" alt="">  */}}
   <div class="h-36 lg:h-auto lg:w-36 flex-none bg-cover rounded-t lg:rounded-t-none lg:rounded-l text-center overflow-hidden">
     <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline">
       {{ partial "_shared/list-image" . }}
@@ -28,12 +45,11 @@
     <span class="text-sm text-gray-600 flex items-center">
       {{ .WordCount }} words
     </span>
-    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline"><h4 class="text-gray-900 font-bold text-lg my-1">{{.Title}}</h4></a>
+    <a href="{{ .RelPermalink }}" title="{{ .Title }}" class="no-underline"><h4 class="text-gray-900 font-bold text-lg font-bold my-1">{{.Title}}</h4></a>
     <p class="text-gray-700 mt-1">{{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}</p>
     <span class="text-gray-900 leading-none text-sm">{{ if isset .Params "author"}}{{ .Params.Author }}{{ else }}{{end}}</span>
     <span class="text-gray-500 text-sm">{{ if isset .Params "date"}}{{ .Params.date.Format "January 2, 2006" }}{{ else }}{{end}}</span>
   </div>
-{{/*  </a>  */}}
 </li>
 
 
@@ -48,7 +64,7 @@
         <p class="text-sm text-gray-600 flex items-center">
         {{ .WordCount }} words
       </p>
-        <div class="text-gray-900 font-bold text-xl mb-2">{{.Title}}</div>
+        <div class="text-gray-900 font-bold text-xl font-bold mb-2">{{.Title}}</div>
         <p class="text-gray-700 text-base">{{ if isset .Params "description"}}{{ .Params.Description | truncate 75}}{{ else }}{{ .Summary | truncate 75}}{{ end }}</p>
       </div>
       <div class="flex items-center">

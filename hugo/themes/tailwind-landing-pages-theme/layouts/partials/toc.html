@@ -1,0 +1,11 @@
+<!-- TOCs need to be declared explicitly in the front matter of content/*.md -->
+    <aside class="px-8">
+    {{ if and (gt .WordCount 400 ) (.Params.toc) }}
+    <h5 class="text-slate-900 font-semibold mb-4 text-sm leading-6">On this Page</h5>
+    <span class="text-slate-700 text-sm leading-6">
+        {{/*  block py-1 font-medium hover:text-slate-900  */}}
+        {{ .TableOfContents }}
+    </span>
+    {{ end }}
+    {{- partial "previous-next-links-in-section.html" . -}}
+</aside>

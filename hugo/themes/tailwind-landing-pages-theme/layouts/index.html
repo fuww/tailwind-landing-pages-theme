@@ -8,7 +8,7 @@
 {{ define "main-blank" }}
 {{/*  In development: show a list of all pages for quick access when testing */}}
 {{ if .Site.BuildDrafts }}
-<div class="section-content post">
+<div class="max-w-prose mx-auto">
     <ul role="list" class="divide-y divide-gray-200">
         {{ range .Site.Pages }}
         {{- partial "_tailwind/twoline" . -}}
@@ -17,7 +17,7 @@
 </div>
 {{ end }}
 <div class="max-w-7xl mx-auto">
-    <div class="m-8 md:m-16 center">
+    <div class="m-8 md:m-16 text-center">
         {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkNews "name" "News" "class" "m-4 sm:m-8 md:m-12") -}}
         {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkJobs "name" "Jobs" "class" "m-4 sm:m-8 md:m-12") -}}
         {{- partial "elements/button" (dict "href" $.Site.Params.fashionunitedLite.buttonLinkBI "name" "Business Intelligence" "class" "m-4 sm:m-8 md:m-12") -}}
@@ -37,7 +37,7 @@
             to start
             a new professional challenge or to drive their fashion business even further.</p>
     </div>
-    <h1 class="text-center h1 my-16 pt-16">The Industry Network</h1>
+    <h1 class="text-center text-3xl my-16 pt-16">The Industry Network</h1>
 </div>
 {{ end }}
 {{ define "footer"}}{{ end }}

@@ -10,24 +10,6 @@
         {{ partial "_shared/hero" . }}
     {{ end }}
     </div>
-    {{/*  <div class="grid-wrapper">
-        {{ block "title" . }}
-        <div class="grid-header post">
-            <div class="pt-4 pb-2 md:pt-8 md:pb-4">
-                {{- partial "_tailwind/title" . -}}
-            </div>
-        </div>
-        {{ end }}
-        {{ if (not (isset .Params "disablemenu")) }}
-        <div class="grid-nav pt-4 pb-2 md:pt-8 md:pb-4 px-4">
-            {{ block "nav" . }}{{ end }}
-        </div>
-        {{ end }}
-        {{ block "main" . }}{{ end }}
-        <div class="grid-sidebar pt-4 pb-2 md:pt-8 md:pb-4 px-4">
-            {{ block "sidebar" . }}{{ end }}
-        </div>
-    </div>  */}}
 {{ block "main-blank" . }}{{ end }}
 </main>
 {{/*  {{ block "footer" . }}{{ partial "structure/footer" . }}{{ end }}  */}}
