@@ -2,7 +2,7 @@
     <ul class="grid grid-cols-3 gap-3 sm:grid-cols-6">
         {{ range .Params.tags }}
         {{/*  TODO: button partial  */}}
-            <a class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase sm:flex-1 cursor-pointer focus:outline-none undefined bg-white border-gray-200 text-gray-900 hover:bg-gray-50 p-4 mr-4" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{.}}</a>            
+            <a class="border rounded-md py-3 px-3 flex items-center justify-center text-sm font-medium uppercase no-underline sm:flex-1 cursor-pointer focus:outline-none undefined bg-white border-gray-200 text-gray-900 hover:bg-gray-50 p-4 mr-4" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{.}}</a>            
         {{ end }}
     </ul>
 </div>

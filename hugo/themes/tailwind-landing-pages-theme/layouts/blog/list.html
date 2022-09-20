@@ -1,0 +1,81 @@
+{{ define "header"}}
+{{- partial "_shared/navigation" . -}}
+{{ end }}
+{{ define "hero"}}<div></div>{{ end }}
+{{ define "main" }}
+{{ end }}
+{{ define "main-blank" }}
+
+
+<div class="border-b bg-neutral-50 border-neutral-200">
+    <div class="container mx-auto px-5">
+        <div class="py-2 text-center text-sm">The source code for this blog is <a
+                href="https://gitlab.com/fuww/blog-marketing/-/tree/main/"
+                class="underline hover:text-blue-600 duration-200 transition-colors">available on GitLab</a>.</div>
+    </div>
+</div>
+
+<main>
+    <div class="container mx-auto px-5">
+        <section class="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
+            <h1 class="text-5xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">Blog.</h1>
+            <h4 class="text-center md:text-left text-lg mt-5 md:pl-8">There is always a reason to <a
+                    href="https://giphy.com/explore/celebration"
+                    class="underline hover:text-blue-600 duration-200 transition-colors">celebrate</a></h4>
+        </section>
+
+
+        <section>
+            <h2 class="mb-8 text-5xl md:text-7xl font-bold tracking-tighter leading-tight">More Stories</h2>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 md:gap-x-16 lg:gap-x-32 gap-y-20 md:gap-y-32 mb-32">
+
+
+                {{/*  {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+                {{- partial "_tailwind/card" . -}}
+                {{ end }}  */}}
+
+                {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+
+                <div>
+                    <div class="mb-5">
+                        <div class="sm:mx-0"><a aria-label="{{ .Title }}"
+                                href="{{ .RelPermalink }}">
+                                <div class="shadow-sm hover:shadow-lg transition-shadow duration-200">
+                                {{ if isset .Params "images"}}
+                                {{ partial "_shared/card-image" . }}
+                                {{ end }}
+                                </div>
+                                {{/*  <img
+                                    src="/assets/blog/2022-06-16-annual-summer-bbq-2022-/cover.jpg"
+                                    alt="Cover Image for {{ .Title }}"
+                                    class="shadow-sm hover:shadow-lg transition-shadow duration-200">  */}}
+                                </a>
+                            </div>
+                    </div>
+                    <h3 class="text-3xl font-bold mb-3 leading-snug"><a class="hover:underline"
+                            href="{{ .RelPermalink }}">{{ .Title }}</a></h3>
+                    <div class="text-lg mb-4"><time datetime="{{ .Params.date }}">{{ .Params.date.Format "January 2, 2006" }}</time></div>
+                    <p class="text-lg leading-relaxed mb-4">{{ .Params.description }}</p>
+                </div>
+                {{ end }}
+
+            </div>
+        </section>
+
+
+
+    </div>
+</main>
+
+
+
+{{/*  <div class="p-10 grid grid-cols-1 sm:grid-cols-1 md:grid-cols-3 lg:grid-cols-3 xl:grid-cols-3 gap-5 max-w-5xl mx-auto">
+    {{ range where .Pages.ByTitle "Params.hidden" "ne" true }}
+    {{- partial "_tailwind/card" . -}}
+    {{ end }}
+</div>  */}}
+<div class="mt-6 prose prose-rose prose-lg text-gray-500 mx-auto">
+    {{ .Content }}
+</div>
+{{ end }}
