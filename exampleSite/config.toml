@@ -1,0 +1,25 @@
+theme = "tailwind-landing-pages-theme"
+languageCode = "en-us"
+baseurl = "http://example.com/"
+title = "Hugo Tailwind CSS Landing Pages Theme"
+
+author = "Joost van der Laan"
+copyright = "Copyright © 2022, Joost van der Laan, all rights reserved."
+
+[params]
+    name = "Hugo Tailwind CSS Landing Pages Theme"
+    description = "A Hugo Tailwind CSS Landing Pages Theme"
+
+    github_user = "Joostvanderlaan"
+    github_repo = "https://gitlab.com/fuww/tailwind-landing-pages-theme"
+    github_banner = true
+
+    favicon = "favicon.ico"
+
+[build]
+  writeStats = true
+
+# syntax highlight settings
+[markup]
+  [markup.highlight]
+    style = "dracula"
